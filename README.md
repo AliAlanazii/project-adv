@@ -54,7 +54,7 @@ SELECT * FROM KSA WHERE LOWER(comments) LIKE '%amazing%';
 <img width="1061" alt="Screenshot 1446-08-12 at 9 28 46 PM" src="https://github.com/user-attachments/assets/04f7f897-5baa-4707-bfc8-1fce2e23ee6d" />
 
 
-#### Q 10: Cinema Halls with Ratings Between 4 and 5
+#### Q10: Cinema Halls with Ratings Between 4 and 5
 ```sql
 SELECT * FROM KSA WHERE rating BETWEEN 4 AND 5 ORDER BY location;
 ```
