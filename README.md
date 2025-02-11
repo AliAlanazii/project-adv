@@ -18,7 +18,7 @@ SELECT AVG(rating) AS average_rating FROM KSA;
 ```
 <img width="1061" alt="Screenshot 1446-08-12 at 9 13 59 PM" src="https://github.com/user-attachments/assets/64d4ff1c-5b35-4eb9-ab35-0614d2c931c4" />
 
-#### -- Q4: review every thing inside Riyadh my city!!!
+#### Q4: review every thing inside Riyadh my city!!!
 ```sql
 SELECT * FROM KSA WHERE location = 'Riyadh';
 ```
@@ -60,6 +60,25 @@ SELECT * FROM KSA WHERE rating BETWEEN 4 AND 5 ORDER BY location;
 ```
 <img width="1061" alt="Screenshot 1446-08-12 at 9 29 41 PM" src="https://github.com/user-attachments/assets/809cb4df-b6dd-4d65-afcb-8f01b15040b4" />
 
+#### bonus: A SQL function to get the average rating by genre
+```sql
+
+DELIMITER //
+CREATE FUNCTION get_average_rating(genre_name VARCHAR(255))
+RETURNS FLOAT
+DETERMINISTIC
+BEGIN
+    DECLARE avg_rating FLOAT;
+    SELECT AVG(rating) INTO avg_rating
+    FROM KSA
+    WHERE genre = genre_name;
+    RETURN avg_rating;
+END;
+//
+DELIMITER ;
+SELECT get_average_rating('Movie theater') AS average_rating;
+```
+<img width="1061" alt="Screenshot 1446-08-12 at 9 50 23 PM" src="https://github.com/user-attachments/assets/8574e844-3ed3-4186-97e0-bf254e0d1de8" />
 
 
 
