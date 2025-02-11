@@ -47,8 +47,8 @@ SELECT location, COUNT(*) AS hall_count FROM KSA GROUP BY location;
 SELECT name, rating FROM KSA ORDER BY rating ASC LIMIT 1;
 ```
 <img width="1061" alt="Screenshot 1446-08-12 at 9 24 34 PM" src="https://github.com/user-attachments/assets/696a984b-552a-4bca-af53-5d96ae899e5f" />
-#### Q9: Cinema Halls with "Amazing" in Comments
 
+#### Q9: Cinema Halls with "Amazing" in Comments
 ```sql
 SELECT * FROM KSA WHERE LOWER(comments) LIKE '%amazing%';
 ```
